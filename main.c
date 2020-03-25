@@ -15,16 +15,25 @@ int main(){
     "12345678", "abc123", "1234567", "password1", "12345"};
     char input[MAX_STR_LEN];
     int passwordNo = getRandInt();
-    int returnValue;
+    int returnValue, len;
 
     printf("Type in password no %d\n", getRandInt());
-    printf("correct password %s\n", passwords[passwordNo]);
+
     fgets(input, MAX_STR_LEN, stdin);
-    printf("You typed %s", input);
+    len = strlen(input);
+
+    // Remove newline from string
+    if( input[len-1] == '\n' )
+        input[len-1] = 0;
+    printf("You typed \"%s\"\n", input);
 
     returnValue = strcmp(passwords[passwordNo], input);
 
-    printf("ret value %d\n", returnValue);
+    if(returnValue == 0){
+        printf("Congratulations, the password is correct!\n");
+    } else {
+        printf("Wrong password\n");
+    }
 
 
     return 0;
