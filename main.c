@@ -6,7 +6,7 @@
 
 // forward declaration from my_lib.a
 int getRandInt();
-
+void checkPassword(char* str1, char* str2);
 
 
 int main(){
@@ -26,15 +26,8 @@ int main(){
     if( input[len-1] == '\n' )
         input[len-1] = 0;
     printf("You typed \"%s\"\n", input);
-
-    returnValue = strcmp(passwords[passwordNo], input);
-
-    if(returnValue == 0){
-        printf("Congratulations, the password is correct!\n");
-    } else {
-        printf("Wrong password\n");
-    }
-
+    
+    checkPassword(passwords[passwordNo], input);
 
     return 0;
 }

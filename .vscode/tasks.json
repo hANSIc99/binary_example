@@ -6,7 +6,8 @@
         {
             "label": "gcc build active file",
             "type": "shell",
-            "command": "cc -Wall -g main.c -o my_app my_lib.a"
+            //"command": "cc -Wall -g main.c -o my_app my_lib.a"
+            "command": "make"
         }
     ]
 }
